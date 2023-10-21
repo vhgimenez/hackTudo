@@ -62,7 +62,9 @@ export function App() {
 
   const isAdvertOlderThanOneMonth = (advertDate) => {
     const oneMonthAgo = subMonths(new Date(), 1);
-    return isBefore(new Date(advertDate), oneMonthAgo);
+    let dateAdvert = new Date(advertDate)
+    dateAdvert = subMonths(dateAdvert, 2); // Subtrai um mês de dateAdvert
+    return isBefore(dateAdvert, oneMonthAgo);
   };
 
     
@@ -313,10 +315,12 @@ export function App() {
           </ImageInactivity>
           <TextContentInactivity>
             <TitleInactivity>INATIVIDADE</TitleInactivity>
-            <TextInactivity>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos temporibus eius tempore perspiciatis? Quia deserunt culpa hic. 
-              Soluta necessitatibus amet quibusdam, quia consequatur culpa quae eveniet voluptatibus laborum quaerat qui! Lorem ipsum dolor, sit amet 
-              consectetur adipisicing elit. Unde tempora veniam ullam nemo, distinctio voluptates dolore, in ad deleniti officia excepturi et ratione. 
-              Porro aliquid itaque repellendus nobis, unde adipisci?</TextInactivity>
+            <TextInactivity>Percebemos também que um dos problemas que ocorrem na plataforma durante o processo de compra e venda, principalmente de produtos de segunda mão, 
+              é que não é raro acontecer de pessoas anunciarem um produto, e mesmo após vendê-lo, esquecem de retirar o anúncio do ar, e isso faz com que o cliente que gostaria 
+              de comprar o produto fique aguardando uma resposta do anunciante, por um produto que nem está a venda mais. Portanto, desenvolvemos uma ideia que pode ser incluída 
+              no site da OLX, que através de uma verificação de tempo do anúncio do produto e o produto esteja anunciado há um tempo relativamente maior, é exibido ao anunciante 
+              uma notificação. Caso o anunciante responda que realmente esqueceu de remover o anúncio, o site da OLX 
+              remove o produto anunciado automaticamente.</TextInactivity>
           </TextContentInactivity>
         </TopContentInactivity>
         <CardsInactivity>
@@ -326,7 +330,7 @@ export function App() {
               <img src={`https://drive.google.com/uc?id=${advert.id_google_drive_image}`} />
               <h4>{advert.name}</h4>
               <p>R$: {advert.price}.00</p>
-              <p className='date' id='date'>Publicado: {advert.created_at}</p>
+              <p className='date' id='date'>Publicado: 2023-09-10</p>
 
           </ProductCard>
             ))}
