@@ -89,7 +89,7 @@ export function App() {
           const btnMenuMobile = document.querySelector(".btn-menu-mobile");
           const MenuMobile = document.querySelector(".menu-mobile");
           const BtnCloseMenuMobile = document.querySelector(".btn-close-menu");
-          const productCard = document.querySelector(".product-card");
+          const productCard = document.querySelectorAll(".product-card");
           const cardAdd = document.querySelector(".card-add");
           const datePublish = document.querySelector(".date");
 
