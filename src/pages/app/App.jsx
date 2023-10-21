@@ -107,7 +107,9 @@ export function App() {
             alert.classList.toggle("darkmode-cards");
             curiosity1.classList.toggle("darkmode-cards");
             curiosity2.classList.toggle("darkmode-cards");
-            productCard.classList.toggle("darkmode");
+            productCard.forEach((product) => {
+              product.classList.toggle("darkmode");
+            })
             cardAdd.classList.toggle("darkmode");
             datePublish.classList.toggle("darkmode");
 
@@ -126,7 +128,11 @@ export function App() {
             curiosity1.classList.toggle("darkmode-cards");
             curiosity2.classList.toggle("darkmode-cards");
             MenuMobile.classList.toggle("darkmode");
-
+            productCard.forEach((product) => {
+              product.classList.toggle("darkmode");
+            })
+            cardAdd.classList.toggle("darkmode");
+            datePublish.classList.toggle("darkmode");
 
           }
 
